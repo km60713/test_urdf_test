@@ -1,0 +1,69 @@
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_esr_2">
+    <remap from="/points_in" to="/scan_esr_2" />
+    <remap from="/points2_out" to="/pc2_scan_esr_2" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_esr_3">
+    <remap from="/points_in" to="/scan_esr_3" />
+    <remap from="/points2_out" to="/pc2_scan_esr_3" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_srr_1">
+    <remap from="/points_in" to="/scan_srr_1" />
+    <remap from="/points2_out" to="/pc2_scan_srr_1" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_srr_2">
+    <remap from="/points_in" to="/scan_srr_2" />
+    <remap from="/points2_out" to="/pc2_scan_srr_2" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_srr_3">
+    <remap from="/points_in" to="/scan_srr_3" />
+    <remap from="/points2_out" to="/pc2_scan_srr_3" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_sick_1">
+    <remap from="/points_in" to="/scan_sick_1" />
+    <remap from="/points2_out" to="/pc2_scan_sick_1" />
+   </node>
+
+   <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="point_cloud_converter_sick_2">
+    <remap from="/points_in" to="/scan_sick_2" />
+    <remap from="/points2_out" to="/pc2_scan_sick_2" />
+   </node>
+
+<!-- launch filter maneger -->
+
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+
+<!-- filter for esr 1 -->
+
+  <node pkg="nodelet" type="nodelet" name="esr_passthrough_z" args="load pcl/PassThrough pcl_manager" output="screen">
+    	<remap from="~input" to="/pc2_scan_esr_1" />
+	<rosparam>
+     	 filter_field_name: z
+      	filter_limit_min: -0.8
+      	filter_limit_max: 20
+      	filter_limit_negative: False
+    	</rosparam>    
+  </node>
+  <node pkg="nodelet" type="nodelet" name="esr_passthrough_zx" args="load pcl/PassThrough pcl_manager" output="screen">
+    	<remap from="~input" to="/esr_passthrough_z/output" />
+	<rosparam>
+      	filter_field_name: x
+      	filter_limit_min: 0.1
+      	filter_limit_max: 174
+      	filter_limit_negative: False
+    	</rosparam>    
+  </node>
+  <node pkg="nodelet" type="nodelet" name="esr_passthrough_zxy" args="load pcl/PassThrough pcl_manager" output="screen">
+    	<remap from="~input" to="/esr_passthrough_zx/output" />
+	<rosparam>
+      	filter_field_name: y
+      	filter_limit_min: -30.21
+      	filter_limit_max: 30.21
+      	filter_limit_negative: False
+    	</rosparam>    
+  </node>
+

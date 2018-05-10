@@ -1,0 +1,9 @@
+scan_filter_chain:
+- name: range
+  type: LaserScanRangeFilter
+  params:
+    use_message_range_limits: false
+    lower_threshold: 0.01
+    upper_threshold: .inf
+    lower_replacement_value: NaN
+    upper_replacement_value: NaN

@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<robot name="hd465_7">
+  <property name="M_PI" value="3.14159274"/>
+
+  <link name="base_link">
+    <visual>
+
+     <origin xyz="0 0 0" rpy="${90*M_PI/180.0} 0 ${180*M_PI/180.0}" />
+      <geometry>
+	<mesh filename="package://test_urdf_test/mesh/hd465_7_light.STL"/>
+      </geometry>
+
+<!--
+<origin xyz="-4.7 0 2.2" rpy="0 0 0"/>
+<geometry>
+  <box size="9.4 4.2 4.4"/>
+</geometry>
+-->
+    </visual>
+
+    <collision>
+      <origin xyz="-4.7 0 2.2" rpy="0 0 0" />
+      <geometry>
+        <box size="9.4 4.2 4.4"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 2.2" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+<!-- ground -->
+
+<link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box1 -->
+  
+  <link name="cardboard_box">
+  <visual>
+    <origin xyz="3 7.5 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="3 7.5 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box2 -->
+  
+  <link name="cardboard_box2">
+  <visual>
+    <origin xyz="3 0 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="3 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box2_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box2"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box3 -->
+  
+  <link name="cardboard_box3">
+  <visual>
+    <origin xyz="3 -7.5 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="3 -7.5 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box3_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box3"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box4 -->
+  
+  <link name="cardboard_box4">
+  <visual>
+    <origin xyz="28.523 19.315 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="28.523 19.315 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box4_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box4"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box5 -->
+  
+  <link name="cardboard_box5">
+  <visual>
+    <origin xyz="33.826 14.011 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="33.826 14.011 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box5_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box5"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box6 -->
+  
+  <link name="cardboard_box6">
+  <visual>
+    <origin xyz="39.130 8.708 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="39.130 8.708 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box6_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box6"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box7 -->
+  
+  <link name="cardboard_box7">
+  <visual>
+    <origin xyz="40.3375 47.8375 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="40.3375 47.8375 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box7_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box7"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box8 -->
+  
+  <link name="cardboard_box8">
+  <visual>
+    <origin xyz="47.8375 47.8375 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="47.8375 47.8375 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+XC  <joint name="cardboard_box8_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box8"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box9 -->
+  
+  <link name="cardboard_box9">
+  <visual>
+    <origin xyz="55.3375 47.8375 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="55.3375 47.8375 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box9_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box9"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+
+  <!-- gazebo -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>hd465_7</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+    <mu1 value="0.5" />
+    <mu2 value="0.5" />
+  </gazebo>
+
+  <!-- Delphy ESR long range radar 1 -->
+  <link name="ESR_Long_1_optical_frame" />
+  <link name="ESR_Long_1_link">
+    <visual>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="ESR_Long_1_base_joint" type="fixed">
+    <origin xyz="0.365 -0.4 0.9" rpy="0 0 ${-17.5*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="ESR_Long_1_optical_frame"/>
+  </joint> 
+  <joint name="ESR_Long_1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ESR_Long_1_optical_frame"/>
+    <child link="ESR_Long_1_link"/>
+  </joint>
+<!-- gazebo Delphy ESR long range 1 plugin -->
+<gazebo reference="ESR_Long_1_link">
+    <sensor type="ray" name="ESR_Long_1_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>200</samples>
+            <min_angle>${-10.0*M_PI/180.0}</min_angle>
+            <max_angle>${10.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>80</samples>
+            <min_angle>${-4.0*M_PI/180.0}</min_angle>
+            <max_angle>${4.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>1.00</min>
+          <max>178.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="ESR_Long_1_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_esr_1</topicName>
+        <updateRate>5</updateRate>
+        <frameName>ESR_Long_1_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Blue" />
+</gazebo>
+
+  <!-- Delphy ESR long range radar 2 -->
+  <link name="ESR_Long_2_optical_frame" />
+  <link name="ESR_Long_2_link">
+    <visual>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="ESR_Long_2_base_joint" type="fixed">
+    <origin xyz="0.465 -0.1 0.9" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="ESR_Long_2_optical_frame"/>
+  </joint> 
+  <joint name="ESR_Long_2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ESR_Long_2_optical_frame"/>
+    <child link="ESR_Long_2_link"/>
+  </joint>
+<!-- gazebo Delphy ESR long range 2 plugin -->
+<gazebo reference="ESR_Long_2_link">
+    <sensor type="ray" name="ESR_Long_2_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>200</samples>
+            <min_angle>${-10.0*M_PI/180.0}</min_angle>
+            <max_angle>${10.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>80</samples>
+            <min_angle>${-4.0*M_PI/180.0}</min_angle>
+            <max_angle>${4.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>1.00</min>
+          <max>178.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="ESR_Long_2_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_esr_2</topicName>
+        <updateRate>5</updateRate>
+        <frameName>ESR_Long_2_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Blue" />
+</gazebo>
+
+  <!-- Delphy ESR long range radar 3 -->
+  <link name="ESR_Long_3_optical_frame" />
+  <link name="ESR_Long_3_link">
+    <visual>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.050 0.130 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="ESR_Long_3_base_joint" type="fixed">
+    <origin xyz="0.365 0.4 0.9" rpy="0 0 ${17.5*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="ESR_Long_3_optical_frame"/>
+  </joint> 
+  <joint name="ESR_Long_3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ESR_Long_3_optical_frame"/>
+    <child link="ESR_Long_3_link"/>
+  </joint>
+<!-- gazebo Delphy ESR long range 3 plugin -->
+<gazebo reference="ESR_Long_3_link">
+    <sensor type="ray" name="ESR_Long_3_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>200</samples>
+            <min_angle>${-10.0*M_PI/180.0}</min_angle>
+            <max_angle>${10.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>80</samples>
+            <min_angle>${-4.0*M_PI/180.0}</min_angle>
+            <max_angle>${4.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>1.00</min>
+          <max>178.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="ESR_Long_3_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_esr_3</topicName>
+        <updateRate>5</updateRate>
+        <frameName>ESR_Long_3_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Blue" />
+</gazebo>
+
+  <!-- Autoliv Short range Radar 1 -->
+  <link name="SRR_1_optical_frame" />
+  <link name="SRR_1_link">
+    <visual>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SRR_1_base_joint" type="fixed">
+    <origin xyz="0.065 -0.9 0.9" rpy="0 0 ${-45*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="SRR_1_optical_frame"/>
+  </joint> 
+  <joint name="SRR_1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SRR_1_optical_frame"/>
+    <child link="SRR_1_link"/>
+  </joint>
+<!-- gazebo Autoliv Short range radar 1 plugin -->
+<gazebo reference="SRR_1_link">
+    <sensor type="ray" name="SRR_1_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>260</samples>
+            <min_angle>${-65.0*M_PI/180.0}</min_angle>
+            <max_angle>${65.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>32</samples>
+            <min_angle>${-8.0*M_PI/180.0}</min_angle>
+            <max_angle>${8.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>65.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="SRR_1_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_srr_1</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SRR_1_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Green" />
+</gazebo>
+
+  <!-- Autoliv Short range Radar 2 -->
+  <link name="SRR_2_optical_frame" />
+  <link name="SRR_2_link">
+    <visual>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SRR_2_base_joint" type="fixed">
+    <origin xyz="0.465 0.1 0.9" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="SRR_2_optical_frame"/>
+  </joint> 
+  <joint name="SRR_2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SRR_2_optical_frame"/>
+    <child link="SRR_2_link"/>
+  </joint>
+<!-- gazebo Autoliv Short range radar 2 plugin -->
+<gazebo reference="SRR_2_link">
+    <sensor type="ray" name="SRR_2_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>260</samples>
+            <min_angle>${-65.0*M_PI/180.0}</min_angle>
+            <max_angle>${65.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>32</samples>
+            <min_angle>${-8.0*M_PI/180.0}</min_angle>
+            <max_angle>${8.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>65.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="SRR_2_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_srr_2</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SRR_2_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Green" />
+</gazebo>
+
+  <!-- Autoliv Short range Radar 3 -->
+  <link name="SRR_3_optical_frame" />
+  <link name="SRR_3_link">
+    <visual>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.063 0.095 0.090"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SRR_3_base_joint" type="fixed">
+    <origin xyz="0.065 0.8 0.9" rpy="0 0 ${45*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="SRR_3_optical_frame"/>
+  </joint> 
+  <joint name="SRR_3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SRR_3_optical_frame"/>
+    <child link="SRR_3_link"/>
+  </joint>
+<!-- gazebo Autoliv Short range radar 3 plugin -->
+<gazebo reference="SRR_3_link">
+    <sensor type="ray" name="SRR_3_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>260</samples>
+            <min_angle>${-65.0*M_PI/180.0}</min_angle>
+            <max_angle>${65.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>32</samples>
+            <min_angle>${-8.0*M_PI/180.0}</min_angle>
+            <max_angle>${8.0*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>65.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="SRR_3_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_srr_3</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SRR_3_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Green" />
+</gazebo>
+
+  <!-- SICK Lidar 1 -->
+  <link name="SICK_1_optical_frame" />
+  <link name="SICK_1_link">
+    <visual>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SICK_1_base_joint" type="fixed">
+    <origin xyz="0.265 -0.7 0.9" rpy="0 ${6.8*M_PI/180.0} ${-30*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="SICK_1_optical_frame"/>
+  </joint> 
+  <joint name="SICK_1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SICK_1_optical_frame"/>
+    <child link="SICK_1_link"/>
+  </joint>
+<!-- SICK Lidar 1 plugin -->
+<gazebo reference="SICK_1_link">
+    <sensor type="ray" name="SICK_1_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>880</samples>
+            <min_angle>${-55.0*M_PI/180.0}</min_angle>
+            <max_angle>${55.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>4</samples>
+            <min_angle>${-1.6*M_PI/180.0}</min_angle>
+            <max_angle>${1.6*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>89.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="SICK_1_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_sick_1</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SICK_1_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Red" />
+</gazebo>
+
+  <!-- SICK Lidar 2 -->
+  <link name="SICK_2_optical_frame" />
+  <link name="SICK_2_link">
+    <visual>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SICK_2_base_joint" type="fixed">
+    <origin xyz="0.265 0.6 0.9" rpy="0 ${6.8*M_PI/180.0} ${40*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="SICK_2_optical_frame"/>
+  </joint> 
+  <joint name="SICK_2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SICK_2_optical_frame"/>
+    <child link="SICK_2_link"/>
+  </joint>
+<!-- SICK Lidar 2 plugin -->
+<gazebo reference="SICK_2_link">
+    <sensor type="ray" name="SICK_2_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>880</samples>
+            <min_angle>${-55.0*M_PI/180.0}</min_angle>
+            <max_angle>${55.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>4</samples>
+            <min_angle>${-1.6*M_PI/180.0}</min_angle>
+            <max_angle>${1.6*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>89.0</max>
+        </range>
+<!--	<noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+-->
+      </ray>
+      <plugin name="SICK_2_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_sick_2</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SICK_2_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Red" />
+</gazebo>
+
+</robot>

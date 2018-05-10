@@ -1,0 +1,339 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+  <world name="default">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+      
+      <include>
+         <uri>model://sun</uri>
+      </include>
+
+      <model name='box_1'>
+	<link name='base_1'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>3 7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_1_collision'>
+	    <pose frame=''>3 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_1_visual'>
+	    <pose frame=''>3 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+      </model>
+
+      <model name='box_2'>
+	<link name='base_2'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>3 0 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_2_collision'>
+	    <pose frame=''>3 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_2_visual'>
+	    <pose frame=''>3 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+	 </model>
+
+      <model name='box_3'>
+	<link name='base_3'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>3 -7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_3_collision'>
+	    <pose frame=''>3 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_3_visual'>
+	    <pose frame=''>3 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+	 </model>
+
+	 <model name='box_4'>
+	<link name='base_4'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>40 7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_4_collision'>
+	    <pose frame=''>40 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_4_visual'>
+	    <pose frame=''>40 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+      </model>
+
+      <model name='box_5'>
+	<link name='base_5'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>40 0 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_5_collision'>
+	    <pose frame=''>40 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_5_visual'>
+	    <pose frame=''>40 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+	 </model>
+
+      <model name='box_6'>
+	<link name='base_6'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>40 -7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_6_collision'>
+	    <pose frame=''>40 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_6_visual'>
+	    <pose frame=''>40 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+<!--	    <material>
+	      <ambient>0 0 0 1</ambient>
+	    </material>
+-->	  </visual>
+	</link>
+	 </model>
+
+      <model name='box_7'>
+	<link name='base_7'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>80 7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_7_collision'>
+	    <pose frame=''>80 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_7_visual'>
+	    <pose frame=''>80 7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </visual>
+	</link>
+	 </model>
+
+	<model name='box_8'>
+	<link name='base_8'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>80 0 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_8_collision'>
+	    <pose frame=''>80 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_8_visual'>
+	    <pose frame=''>80 0 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </visual>
+	</link>
+	</model>
+
+	<model name='box_9'>
+	<link name='base_9'>
+	  <pose frame=''>0 0 0 0 0 0</pose>
+	  <inertial>
+	    <pose frame=''>80 -7.5 0.25 0 0 0</pose>
+	    <mass>1</mass>
+	    <inertia>
+	      <ixx>1</ixx>
+	      <ixy>0</ixy>
+	      <ixz>0</ixz>
+	      <iyy>1</iyy>
+	      <iyz>0</iyz>
+	      <izz>1</izz>
+	    </inertia>
+	  </inertial>
+	  <collision name='base_9_collision'>
+	    <pose frame=''>80 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </collision>
+	  <visual name='base_9_visual'>
+	    <pose frame=''>80 -7.5 0.25 0 0 0</pose>
+	    <geometry>
+	      <box>
+		<size>0.5 0.5 0.5</size>
+	      </box>
+	    </geometry>
+	  </visual>
+	</link>
+	</model>
+	
+   </world>
+</sdf>

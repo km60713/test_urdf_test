@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<robot name="block_laser_test">
+  <property name="M_PI" value="3.14159274"/>
+
+  <link name="base_link">
+    <visual>
+
+<origin xyz="-4.7 0 2.2" rpy="0 0 0"/>
+<geometry>
+  <box size="9.4 4.2 4.4"/>
+</geometry>
+    </visual>
+    <collision>
+      <origin xyz="-4.7 0 2.2" rpy="0 0 0" />
+      <geometry>
+        <box size="9.4 4.2 4.4"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 2.2" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+<!-- ground -->
+
+<link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+<!-- cardboard box1 -->
+  
+  <link name="cardboard_box">
+  <visual>
+    <origin xyz="8 0 0.25" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.5 0.5 0.5"/>
+    </geometry>
+  </visual>
+
+  <collision>
+      <origin xyz="8 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+  </collision>
+  
+  <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+    </inertial>
+  </link>
+  
+  <joint name="cardboard_box_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="cardboard_box"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <!-- gazebo -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>block_laser_test</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+    <mu1 value="0.5" />
+    <mu2 value="0.5" />
+  </gazebo>
+
+  <!-- SICK Lidar 1 -->
+  <link name="SICK_1_optical_frame" />
+  <link name="SICK_1_link">
+    <visual>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.093 0.136 0.088"/>
+      </geometry>
+    </collision>  
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="SICK_1_base_joint" type="fixed">
+    <origin xyz="0.265 -0.7 0.9" rpy="0 ${6.8*M_PI/180.0} ${-30*M_PI/180.0}"/>
+    <parent link="base_link"/>
+    <child link="SICK_1_optical_frame"/>
+  </joint> 
+  <joint name="SICK_1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="SICK_1_optical_frame"/>
+    <child link="SICK_1_link"/>
+  </joint>
+<!-- SICK Lidar 1 plugin -->
+<gazebo reference="SICK_1_link">
+    <sensor type="ray" name="SICK_1_ir_sensor">
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>880</samples>
+            <min_angle>${-55.0*M_PI/180.0}</min_angle>
+            <max_angle>${55.0*M_PI/180.0}</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>4</samples>
+            <min_angle>${-1.6*M_PI/180.0}</min_angle>
+            <max_angle>${1.6*M_PI/180.0}</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>88.0</max>
+        </range>
+	<noise>
+          <type>gaussian</type>
+           <!--Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>1</stddev>
+        </noise>
+      </ray>
+      <plugin name="SICK_1_link_controller" filename="libgazebo_ros_block_laser.so">
+        <topicName>scan_sick_1</topicName>
+        <updateRate>5</updateRate>
+        <frameName>SICK_1_optical_frame</frameName>
+        <alwaysOn>true</alwaysOn>
+      </plugin>
+    </sensor>
+   <material value="Gazebo/Green" />
+</gazebo>
+</robot>
